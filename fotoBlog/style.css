@@ -2,208 +2,124 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
     font-size: 62.5%;
-
-    --color-main-bg: #F5F5F5;
-    --color-light-gray: #8D8D99;
-    --color-strong-font: #202024;
-    --color-bg-input: #EEE;
-    --color-ph-input: #3D3D3D;
-    --color-bg-item: #FFFFFF;
-
+    color: #202024;
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
 }
 
-html, body, input {
-    font-family: 'Mulish', sans-serif;
-}
-
-body {
-    font-size: 1.6rem;
-}
-
-.app {
+#app {
     display: grid;
     grid-template-rows: max-content 1fr max-content;
     height: 100vh;
 }
 
-.content-container {
-    width: min(122rem, 100%);
-    padding: 1.6rem 3.2rem;
+.content {
+    width: min(112rem, 100%);
     margin: 0 auto;
+    padding: 1.6rem 3.2rem;
 }
 
-
-header, 
+header,
 nav,
 nav ul {
     display: flex;
-    gap: 7.2rem;
     align-items: center;
-    
+    gap: 7.575rem;
+    list-style: none;
 }
 
 header form {
     flex: 1;
 }
 
-nav ul {
-    list-style: none;
-
-    color: var(--color-light-gray);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 160%;
+nav ul li a{
+    color: #202024;
 }
 
-ul li.active {
-    color: var(--color-strong-font);
+nav ul li a:hover,
+nav ul li span:hover {
+    color: rgb(198, 198, 198);
 }
 
-form .input-wrapper label {
+ul li span {
+    color: #8D8D99;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.input-wrapper label {
     width: 1px;
     height: 1px;
     overflow: hidden;
     position: absolute;
 }
 
-form .input-wrapper input {
-    padding: 1.6rem 1.2rem;
+.input-wrapper input {
     width: 100%;
-    background: var(--color-bg-input);
-    border: none;
-    border-radius: .5rem;
-
-    color: var(--color-ph-input);
-    font-weight: 600;
-    opacity: 0.56;
-}
-
-.avatar {
-    width: 4.2rem;
-    height: 4.2rem;
-    object-fit: cover;
-    border-radius: 50%;
+    padding: 1.6rem;
+    background-color: #F5F5F5;
+    border: 0;
+    border-radius: .6rem;
 }
 
 main {
-    background: var(--color-main-bg);
+    background-color: #F5F5F5;
     overflow-y: scroll;
 }
 
-/* Gallery */
-main h1 {
-    color: var(--color-strong-font);
+.content h1 {
+    margin: 1.6rem 0;
     font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 160%;
-
-    padding-top: 1.6rem;
 }
 
-.gallery {
-    margin-top: 3.2rem;
-    
+.galery {
     display: grid;
-    grid-template-columns: repeat(3, 39rem);
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+
 }
 
-.item {
-    background: var(--color-bg-item);
+.galery .item {
+    background-color: white;
     border-radius: .8rem;
-
     overflow: hidden;
-
-
 }
 
-.item img {
+.galery img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-
-    /* transition-property: all;
-    transition-duration: 200ms;
-    transition-delay: 0;
-    transition-timing-function: ease-out; */
-
-    transition: all 200ms ease-out;
-
-    display: block;
 }
 
-.item img:hover {
-    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
-    transform: scale(1.1) rotate(-2deg);
+.galery .details {
+    padding: 2.2rem;
 }
 
-.details {
-    padding: 2.4rem;
-
-    background-color: var(--color-bg-item);
-    z-index: 1;
-    position: relative;
-}
-
-.details h2 {
-    color: var(--color-strong-font);
+.galery .details h2 {
     font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 160%;
 }
 
-.tag {
-    margin-top: 1.2rem;
+.galery .details .tags {
+    margin-top: 1rem;
 }
 
-.tag span {
-    border-radius: .6rem;
-    background: var(--color-main-bg);
+.galery .details .tags span {
+    background-color: #F5F5F5;
     padding: .7rem;
-
-    color: var(--color-strong-font);
     font-size: 1.2rem;
-    line-height: 160%;
-    text-transform: uppercase;
 }
 
 footer {
-    text-align: center;
-    padding: 1.6rem;
-}
-
-
-
-header {
-    --translateY: -100%;
-    animation: move .2s;
-}
-
-footer {
-    --translateY: 100%;
-    animation: move .2s;
-}
-@keyframes move {
-    0% {
-        transform: translateY(var(--translateY));
-    }
-}
-
-.item {
-    --appear: .4s;
-    animation: appear var(--appear) backwards;
-}
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
 }

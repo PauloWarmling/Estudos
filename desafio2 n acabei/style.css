@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: "Epilogue", sans-serif;
+
+    --color-base-white: #FFF;
+    --color-base-backgroud: #28293E;
+    --color-base-p: #BBB3E5;
+}
+
+.app {
+    max-width: 33rem;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--color-base-backgroud);
+    color: var(--color-base-white);
+}
+
+header {
+    padding-top: 9.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+header p {
+    color: var(--color-base-p);
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 5.6rem;
+    font-weight: 800;
+    line-height: 6.4rem;
+    letter-spacing: -1px;
+    margin-bottom: 8rem;
+}
+
+main {
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+}
+
+.item img {
+    object-fit: cover;
+    border-radius: .6rem;
+}
+
+.item h2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+
+    position: absolute;
+    bottom: 5.2rem;
+    left: 2.8rem;
+
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 4.8rem;
+}
+
+.item h2 span {
+    background-color: var(--color-base-white);
+    color: black;
+    border-radius: 1.9rem;
+    padding: 0 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    width: fit-content;
+}
